@@ -1,0 +1,1 @@
+..\bin\main.exe resnet-18-pytorch.xml car.bmp CPU
