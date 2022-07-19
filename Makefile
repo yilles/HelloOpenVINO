@@ -1,6 +1,7 @@
 CC = cl
 MOVE = move
 Delete = del
+Create = type NUL >>
 
 bin/main.exe: obj/main.obj lib/openvino_c.lib bin/opencv_c_wrapper.lib
 	$(CC) obj/main.obj lib/openvino_c.lib bin/opencv_c_wrapper.lib
@@ -17,7 +18,7 @@ obj/bmp_reader.obj: src/bmp_reader.c
 	$(MOVE) bmp_reader.obj obj/.
 
 clean:
-	$(Delete) obj\*
-	$(Delete) bin\*
-
-	
+	$(Delete) /q obj\*
+	$(Delete) /q bin\*
+	$(Create) bin/.gitkeep
+	$(Create) obj/.gitkeep
